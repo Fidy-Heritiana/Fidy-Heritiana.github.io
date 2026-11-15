@@ -1,79 +1,123 @@
-# Fidy Heritiana Andrianarivony
+# Site personnel de Fidy Heritiana Andrianarivony
 
-**Analysis of algorithms · Analytic combinatorics · Statistical data analysis**
+Site public : **https://fidy-heritiana.github.io/**
 
-PhD in Mathematics — Université de Fianarantsoa & Université de Montpellier.
+Ce dépôt contient la page personnelle, les liens vers les six projets de
+recherche publics et les publications sélectionnées. Le site fonctionne
+directement sur GitHub Pages, sans installation ni compilation.
 
-I study how the structure and distribution of data influence the behaviour of
-algorithms. My research combines mathematical proofs, generating functions,
-combinatorial models and computational experiments. Here I share research code,
-data and interactive demonstrations to help others explore and reproduce the
-results.
+## Fichiers du site
 
-[ORCID: 0009-0008-5371-3262](https://orcid.org/0009-0008-5371-3262)
+| Fichier | Rôle |
+| --- | --- |
+| `index.html` | Page complète : contenu, mise en forme, recherche, filtres et traduction française. |
+| `sitemap.xml` | Adresse de la page et date de sa dernière modification significative. |
+| `robots.txt` | Indique l'adresse du sitemap aux moteurs de recherche. |
+| `googlec419fc1c171fb5b7.html` | Fichier existant de validation Google Search Console, à conserver tel quel. |
+| `README.md` | Le présent guide de gestion du site. |
 
-## Interactive research projects
+La nouvelle présentation n'exige aucune modification des réglages de publication
+GitHub Pages. Elle conserve la même adresse et le fichier de validation Google.
 
-### Quicksort under the Mallows distribution
+## Mettre à jour la présentation
 
-Explore how an input distribution affects the number of comparisons made by
-first-pivot Quicksort. Compare finite-size means and variances with simulations,
-and inspect moment convergence and normal approximations.
+1. Ouvrir ce dépôt, puis **Add file → Upload files**.
+2. Envoyer `index.html`, `sitemap.xml`, `robots.txt` et `README.md` à la racine.
+3. Enregistrer avec **Commit changes** sur la branche `main`.
+4. Attendre la publication GitHub Pages, puis consulter le site public.
 
-[Try the Quicksort demo](https://quicksort-mallows-ak6ykvfg6rf4taeffvvgbc.streamlit.app/)
-· [Source code and documentation](https://github.com/Fidy-Heritiana/Quicksort-Mallows)
-· [Citable software release](https://doi.org/10.5281/zenodo.24186089)
+Le fichier Google déjà présent n'est pas à remplacer ou à supprimer. Son adresse
+doit rester accessible :
+https://fidy-heritiana.github.io/googlec419fc1c171fb5b7.html
 
-### Greedy construction of oriented hierarchies
+## Ce que propose la page
 
-Investigate a greedy algorithm for constructing oriented hierarchies, a
-classification model used in statistical implicative analysis. Explore
-parameter sensitivity and compare running times.
+- Un accès aux **six dépôts de recherche**, même sans JavaScript.
+- Des boutons vers les **trois applications Streamlit déjà référencées**.
+- Des filtres par démonstration, hiérarchie et probabilités.
+- Une recherche qui accepte les termes français ou anglais, avec ou sans accents.
+- Un bouton **FR / EN**. L'anglais est affiché par défaut et le choix de langue
+  est mémorisé dans le navigateur lorsque son stockage est disponible.
+- Des liens vers les articles, les versions logicielles Zenodo, ORCID et GitHub.
+- Une présentation adaptée au téléphone et à la navigation au clavier.
 
-[Try the greedy-algorithm demo](https://greedy-oriented-hierarchy.streamlit.app/)
-· [Source code and experiments](https://github.com/Fidy-Heritiana/Study-of-the-greedy-algorithm-for-constructing-an-oriented-hierarchy)
-· [Citable software release](https://doi.org/10.5281/zenodo.24129903)
+## Modifier un texte ou un lien
 
-### Comparing Gras's algorithm with an optimized algorithm
+Dans GitHub, ouvrir `index.html` et cliquer sur le crayon pour modifier le fichier.
+Rechercher le texte ou le nom du projet concerné.
 
-Compare two methods for constructing oriented hierarchies on simulated data.
-This project accompanies the study published in *Annals of Mathematics and
-Artificial Intelligence*.
+Les textes traduits suivent cette convention :
 
-[Try the algorithm-comparison demo](https://gras-oriented-hierarchy.streamlit.app/)
-· [Source code and datasets](https://github.com/Fidy-Heritiana/Gras-algorithm-for-constructing-an-oriented-hierarchy)
-· [Research article](https://doi.org/10.1007/s10472-025-10001-1)
-· [Citable software release](https://doi.org/10.5281/zenodo.24185484)
+```html
+<p data-fr="Le texte en français.">The text in English.</p>
+```
 
-## Research interests
+Modifier le texte anglais entre les balises et sa traduction dans `data-fr`.
+Pour un lien, modifier uniquement l'adresse placée dans `href="..."`.
 
-- Probabilistic analysis of algorithms and the influence of input distributions.
-- Analytic combinatorics, generating functions and random generation.
-- Oriented hierarchies, statistical implicative analysis and association rules.
+Le nom du dépôt de chaque projet apparaît dans un commentaire commençant par
+`PROJECT`. Cela permet de retrouver rapidement la bonne fiche.
 
-Further code: [Boltzmann sampling of oriented hierarchy structures](https://github.com/Fidy-Heritiana/Random-generation-of-the-oriented-hierarchy-structure).
+Après une modification significative de la page, actualiser la date `lastmod`
+du fichier `sitemap.xml`, au format `AAAA-MM-JJ`.
 
-## Selected publications
+## Ajouter un projet
 
-- **Andrianarivony, F., Ravelomanana, V., Régnier, J.-C., & Raherinirina, A. (2026).**
-  [Combinatorial and algorithmic analysis of oriented hierarchies in statistical implicative analysis](https://doi.org/10.1007/s10472-025-10001-1).
-  *Annals of Mathematics and Artificial Intelligence*, **94**, 605–646.
+1. Dans `index.html`, copier un bloc complet allant de
+   `<article class="project" ...>` jusqu'à son `</article>`.
+2. Le placer dans le bloc `project-grid`, avant le message `empty-state`.
+3. Modifier son titre, sa description, son lien GitHub et ses éventuels liens
+   vers une démonstration, un article ou un DOI.
+4. Dans `data-categories`, indiquer les filtres pertinents, séparés par un espace :
+   `demo`, `hierarchies`, `probability`.
+5. Compléter `data-search` avec les mots utiles en français et en anglais.
+6. Actualiser les totaux éditoriaux dans la description de la page et la ligne
+   « 6 projects · 3 demonstrations », ainsi que leur traduction. Le compteur des
+   résultats de recherche, lui, se recalcule automatiquement.
 
-- **Andrianarivony, F. H., Cortella, A., Salone, J.-J., Durand-Guerrier, V., & Raherinirina, A. (2024).**
-  [Extraction des règles d’association basée sur la mesure classique d’intensité d’implication : application en didactique des mathématiques](https://doi.org/10.46298/arima.12231).
-  *ARIMA*, **40**.
+Ajouter `demo` uniquement lorsqu'une application a été effectivement déployée et
+son adresse vérifiée. Le lien « Tous les dépôts GitHub » donne aussi accès aux
+nouveaux dépôts avant leur ajout manuel au catalogue.
 
-## Reproducing and citing the work
+## État des projets présentés
 
-Each project links to its code and documentation. For the featured software,
-the Zenodo links identify archived releases. When reproducing an experiment,
-record the release or commit, parameters and random seed, and use the citation
-information provided in the corresponding repository.
+| Projet | Ressources reliées depuis la page |
+| --- | --- |
+| Quicksort–Mallows | Démonstration, code et DOI logiciel. |
+| Construction gloutonne | Démonstration, code et DOI logiciel. |
+| Algorithme de Gras et comparaison | Démonstration, code et DOI logiciel. |
+| Construction avec un tas et un parcours de graphe | Code, données et DOI logiciel. |
+| Modèle aléatoire Ewens–Catalan | Dépôt de recherche. |
+| Génération des structures par une approche de Boltzmann | Documentation et article associé. |
 
-## En français
+La démonstration du dépôt `A-fast-algorithm-for-constructing-an-oriented-hierarchy`
+pourra être reliée à sa fiche après sa mise en ligne. Son DOI actuel identifie
+la version `v1.0.0` des scripts.
 
-Docteur en mathématiques, je travaille sur l’analyse des algorithmes, la
-combinatoire analytique et l’analyse statistique des données. Je m’intéresse
-notamment au coût des algorithmes et aux hiérarchies orientées en analyse
-statistique implicative. Ces dépôts donnent accès aux codes, aux simulations
-et aux démonstrations interactives associés à mes travaux.
+Le dépôt de génération de structures est présenté comme une ressource
+documentaire : ses fichiers Python actuels ne contiennent pas une implémentation
+exécutable complète. La page ne leur attribue donc pas une démonstration active.
+
+## Google Search Console
+
+Le sitemap corrigé utilise l'espace de noms officiel :
+`http://www.sitemaps.org/schemas/sitemap/0.9`.
+
+Une fois la nouvelle page publiée, son adresse reste :
+https://fidy-heritiana.github.io/sitemap.xml
+
+La validation existante reste fondée sur la présence du fichier Google. Une
+modification de la présentation n'exige pas à elle seule une nouvelle validation.
+La prise en compte des changements dans les résultats de recherche dépend du
+prochain passage de Google et n'est pas immédiate.
+
+Documentation officielle :
+- https://support.google.com/webmasters/answer/9008080?hl=fr
+- https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+
+## Annuler une modification
+
+GitHub conserve les versions précédentes dans l'historique des commits. Pour une
+correction ponctuelle, ouvrir une version antérieure du fichier dans **History**,
+copier son contenu puis l'enregistrer dans un nouveau commit. Le fichier de
+validation Google doit rester présent pendant ces opérations.
